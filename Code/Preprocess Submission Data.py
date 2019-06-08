@@ -1,9 +1,8 @@
 import numpy as np
-import pickle as pkl
+from Code.Util import *
 
 # Preprocess according to the current scheme
-with open('Data/Pickles/raw_test_data.pkl', 'rb') as f:
-    test = pkl.load(f)
+test = pkl_load('Data/Pickles/raw_test_data.pkl', 'rb')
 
 new_len = (test.shape[1]-50)//10
 ss = np.empty((test.shape[0], new_len, 50))
@@ -15,5 +14,4 @@ train_rms = np.log(np.sqrt(np.square(ss).sum(axis=1)/50 - np.square(ss.sum(axis=
 test_set = np.log(np.sqrt(np.square(ss).sum(axis=-1)/50 - np.square(ss.sum(axis=-1)/50)))
 test_set = test_set.reshape(2624, 14995, 1)
 
-with open('Data/Pickles/processed_test_data.pkl', 'wb') as f:
-    pkl.dump(test_set, f)
+pkl_dump(test_set, 'Data/Pickles/processed_test_data.pkl')

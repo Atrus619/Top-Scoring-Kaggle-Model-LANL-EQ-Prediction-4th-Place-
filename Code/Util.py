@@ -1,5 +1,6 @@
 import os
 import shutil
+import pickle as pkl
 
 
 def safe_mkdir(path):
@@ -17,3 +18,13 @@ def del_dir(name):
         shutil.rmtree('./Error Plots/{}'.format(name))
     if os.path.isdir('./Train and Test Losses/{}'.format(name)):
         shutil.rmtree('./Train and Test Losses/{}'.format(name))
+
+
+def pkl_dump(obj, filepath):
+    with open(filepath, 'wb') as f:
+        pkl.dump(obj, f)
+
+
+def pkl_load(filepath):
+    with open(filepath, 'rb') as f:
+        return pkl.load(f)

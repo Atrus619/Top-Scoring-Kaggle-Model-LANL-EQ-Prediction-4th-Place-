@@ -1,24 +1,17 @@
 from sklearn import preprocessing
 from Code.Generators import *
-import pickle as pkl
 from Code.Models import CRNN
+from Code.Util import *
 
 # Import data
 # Older data with additional moments
-# with open('Data/Pickles/train_data.pkl', 'rb') as f:
-#     train_data_logs = pkl.load(f)
-with open('Data/Pickles/targets.pkl', 'rb') as f:
-    targets = pkl.load(f)
-with open('Data/Pickles/CV_ind.pkl', 'rb') as f:
-    CV_ind = pkl.load(f)
-with open('Data/Pickles/EQ_ind.pkl', 'rb') as f:
-    EQ_ind = pkl.load(f)
-with open('Data/Pickles/mod_cv_index.pkl', 'rb') as f:
-    mod_cv_index = pkl.load(f)
-with open('Data/Pickles/mod_eval_index.pkl', 'rb') as f:
-    mod_eval_index = pkl.load(f)
-with open('Data/Pickles/train_data_trim.pkl', 'rb') as f:
-    train_data_trim = pkl.load(f)
+# train_data_logs = pkl_load('Data/Pickles/train_data.pkl')
+targets = pkl_load('Data/Pickles/targets.pkl')
+CV_ind = pkl_load('Data/Pickles/CV_ind.pkl')
+EQ_ind = pkl_load('Data/Pickles/EQ_ind.pkl')
+mod_cv_index = pkl_load('Data/Pickles/mod_cv_index.pkl')
+mod_eval_index = pkl_load('Data/Pickles/mod_eval_index.pkl')
+train_data_trim = pkl_load('Data/Pickles/train_data_trim.pkl')
 
 # For CV, comment out if doing a single run
 # models = []

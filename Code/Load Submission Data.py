@@ -1,7 +1,7 @@
 import glob
 import pandas as pd
 import numpy as np
-import pickle as pkl
+from Code.Util import *
 
 # Aggregate all test files for later retrieval
 test_paths = glob.glob('Data/Test Data/*.csv')
@@ -15,5 +15,4 @@ test = np.empty((test_size, 150000))
 for i, x in enumerate(test_paths):
     test[i] = np.genfromtxt(x, skip_header=1)
 
-with open('Data/Pickles/raw_test_data.pkl', 'wb') as f:
-    pkl.dump(test, f)
+pkl_dump(test, 'Data/Pickles/raw_test_data.pkl')

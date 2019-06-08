@@ -1,11 +1,9 @@
-import numpy as np
-import pickle as pkl
+from Code.Util import *
 import kaggle
 import pandas as pd
 kaggle.api.authenticate()
 
-with open('Data/Pickles/processed_test_data.pkl', 'rb') as f:
-    test_set = pkl.load(f)
+test_set = pkl_load('Data/Pickles/processed_test_data.pkl')
 
 # For blending CV training runs together (Run one or the other). Models and scalers come from EQModel_TF2.py training.
 # predictions = np.empty((2624, 5))
