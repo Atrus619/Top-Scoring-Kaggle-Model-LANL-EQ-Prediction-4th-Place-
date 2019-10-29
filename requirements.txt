@@ -65,6 +65,6 @@ tornado==6.0.2
 tqdm==4.31.1
 tsfresh==0.11.2
 urllib3==1.24.3
-Werkzeug==0.15.2
+Werkzeug==0.15.3
 wrapt==1.11.1
 zict==0.1.4
